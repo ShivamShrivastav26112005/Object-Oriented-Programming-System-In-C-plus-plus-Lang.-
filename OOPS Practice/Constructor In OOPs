@@ -1,0 +1,487 @@
+// 1-: Constructors -: kuch chij construct karna 
+// class ka jada kaam nhi hai, class shirf ek blueprint hai, jada kaam objects ka hai 
+// class hai to object hoga and class hai to constructor bhi hoga 
+
+// constructor is mandatory while making a class. 
+// class is just a blueprint/skeleton, class koi memory occupy nhi karta hai, eska instance object hota hai 
+
+// object ke liye memory allocate karne ka kaam constructor karta hai 
+// constructor -: hidden function present inside the class, used to initialize the memory, create objects   
+// constructor by default present hota hai compiler ke pass 
+
+
+// Types of Constructors -: 
+// 1-: Default constructor
+// 2-: Parameterized constructor
+// 3-: Copy constructor 
+
+// 1-: Default constructor -> already exits inside the class 
+// but we can make my own Default constructor inside the class. 
+// constructor is very similar to function, and class is also very similar to function, 
+// so, class takes parameters, class have return type, similarly constructor takes parameters and also have return type 
+// constructor ka return type class ke return type jaisa hi hoga 
+// means agar mera ek Student class hai to uska constructor hmesa student hi return karega,
+// agar ek Bike class hai to uska constructor hmesa bike hi return karega 
+// constructor has same name as the class, it has no return type 
+
+
+// ex. of Bike -: 
+// 1-: default constructor -:
+
+
+// #include<iostream>
+// using namespace std;
+// class Bike{
+// public:
+//     int tyreSize;
+
+//     // default constructor -: basic work -> memory allocation karna 
+//     Bike(){
+//         // hm constructor se kuch aur bhi kaam kara sakte hai 
+//         // now, we check that if object is created then constructor called or not 
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+// };
+
+// // // one object is created then one time constructor called 
+// // int main(){
+// //     Bike tvs; // object creation ho rha hai then constructor ko call jayegi 
+// // }
+
+// // // yes it is displayed means jb bhi object create hota hai constructor ko call jati hai 
+// // // Constructor call ho rha hai jb object create hua to.
+
+
+
+// // two objects is created then two times constructor called 
+// int main(){
+//     Bike tvs; //  1st object is created, ek bar constructor ko call jayegi
+//     Bike honda;  // 2nd object is created, dusri bar bhi constructor ko call jayegi
+// }
+
+// // yes it is displayed means jb bhi object create hota hai constructor ko call jati hai 
+// // jitni bar ek new object create hoga utni bar constructor ko call lagegi 
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+
+
+
+
+
+
+
+
+// IMP -: 
+// 1-: default constructor -: is called when object of the class is created,
+// The constructor will be called every time when an object is created.
+
+
+// #include<iostream>
+// using namespace std;
+
+// class Bike{
+// public:
+//     int tyreSize;
+//     // default constructor -> called two times becoz two objects is created. 
+//     Bike(){
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+// };
+
+// int main(){
+//     Bike tvs;
+//     Bike honda;  
+// }
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+
+
+
+
+
+
+// // 2-: Parameterized constructor -: We can also provide parameters and all are same as default constructor. 
+
+// #include<iostream>
+// using namespace std;
+
+// class Bike{
+// public:
+//     int tyreSize;
+//     int engineSize;
+
+//     // Parameterized constructor -> called two times becoz two objects is created
+//     // and also set the values/size for objects. 
+//     // Parameterized constructor is used to "initialize the values". 
+//     Bike(int tyreSize){ // this constr. takes only one parameter/argument.
+//         this->tyreSize=tyreSize;
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+//     Bike(int tyreSize, int engineSize){ // this constr. takes two parameters/arguments
+//         this->tyreSize=tyreSize;
+//         this->engineSize=engineSize;
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+
+
+//     // // default arguments -: set default values into the arguments.
+//     // Bike(int tyreSize, int engineSize=500){ 
+//     //     this->tyreSize=tyreSize;
+//     //     this->engineSize=engineSize;
+//     // }
+//     // then pass only 1st parameter tyreSize from the main fun. and 2nd parameter is set as by default. 
+
+
+
+// };
+
+// int main(){
+    
+//     Bike tvs(12); // 1 parameter is passed 
+//     Bike honda(13);  
+
+//     // printing values also. 
+//     cout<<tvs.tyreSize<<endl;
+//     cout<<honda.tyreSize<<endl;
+
+//     cout<<endl;
+
+//     // 2 objects is created then 2 times constructor is called and print statement inside them. 
+//     Bike tvss(12,100); // 2 parameters is passed 
+//     Bike hondaa(13,200);  
+
+//     // printing values also. 
+//     cout<<tvss.tyreSize<<endl;
+//     cout<<hondaa.tyreSize<<endl;
+//     cout<<tvss.engineSize<<endl;
+//     cout<<hondaa.engineSize<<endl;
+
+// }
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+// // 12
+// // 13
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+// // 12
+// // 13
+// // 100
+// // 200
+
+
+// 3-: Copy Constructor -: Hold 
+
+
+// Destructor -: Destructor is used to free the memory. when the work of the object is done then delete those object. 
+
+// Constructor mera object ko create karta tha 
+// Destructor mera object ko destroy karega 
+
+// Destructor kb call hota hai, Constructor call hota hai jb object create hota hai 
+// Destructor called when "object goes out of scope". 
+
+// IMP -: 
+// how we can defined Destructor ?
+// Destructor is very similar to constructor and constructor is very similar to function.
+// Destructor name is also same as class name, we can't pass the parameter inside the Destructor becoz i am going to delete the objects
+// use (~) tilda symbol before Destructor.
+
+
+
+// *** scope means programming ke ander hr variable ka ek elaka hota hai. ***
+// "scope" means "elaka" defined by "curly brackets" {}.
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// class Bike{
+// public:
+//     int tyreSize;
+//     int engineSize;
+
+//     // Constructor Making -: 
+//     Bike(){ // default Constructor
+//         cout<<"Constructor call hua."<<endl;
+//     }
+
+//     Bike(int tyreSize){ // Parameterized constructor
+//         this->tyreSize=tyreSize;
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+//     Bike(int tyreSize, int engineSize){ // Parameterized constructor
+//         this->tyreSize=tyreSize;
+//         this->engineSize=engineSize;
+//         cout<<"Constructor call ho rha hai jb object create hua to."<<endl;
+//     }
+
+//     // scope of variable "c" is lies only inside sum() fun. outside the curly bracket "c" does not access. 
+//     void sum(int a, int b){
+//         int c=20;
+//         cout<<a+b+c;
+//     }
+
+//     // Destructor Making -: 
+//     ~Bike(){
+//         cout<<"Destructor call hua."<<endl;
+//     }
+
+// };
+
+// int main(){
+    
+//     Bike tvs(12); 
+//     Bike honda(13);  
+
+//     cout<<tvs.tyreSize<<endl;
+//     cout<<honda.tyreSize<<endl;
+
+//     cout<<endl;
+
+//     Bike tvss(12,100); 
+//     Bike hondaa(13,200);  
+
+//     cout<<tvss.tyreSize<<endl;
+//     cout<<hondaa.tyreSize<<endl;
+//     cout<<tvss.engineSize<<endl;
+//     cout<<hondaa.engineSize<<endl;
+//     cout<<endl;
+
+
+//     // // 1-: scope example -: 
+//     // // cout<<c<<endl; // does not access becoz variable "c" is out of scope. 
+
+    
+// }
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+// // 12
+// // 13
+
+// // Constructor call ho rha hai jb object create hua to.
+// // Constructor call ho rha hai jb object create hua to.
+// // 12
+// // 13
+// // 100
+// // 200
+
+// // Destructor call hua.
+// // Destructor call hua.
+// // Destructor call hua.
+// // Destructor call hua.
+
+// // sare chijo ko print hone ke bad destructor call hua 4 times becoz hmne 4 objects banaya tha. 
+
+
+
+
+
+// Shallow copy and Deep copy. 
+
+
+// 1-: Shallow copy means khokhala 
+// ex-: we have two objects obj1, obj2
+// obj1, obj2 and obj1 me hm obj2 ko daal diye obj1=obj2 
+// if we change the value of obj1 then if value of obj2 is changed
+// so, obj2 is a shallow copy 
+// pahle me change karne ke bad dusare me bhi change ho rha hai, it is not independent 
+// so, it is shallow copy. 
+
+
+// 2-: Deep copy -: 
+// we have two objects obj1, obj2 and 
+// after changing the value of obj1, value of obj2 is not changed then obj2 is a deep copy 
+// obj2 is a independent. So, it is deep copy 
+
+
+
+// 3-: Copy Constructor -: used to copy objects. 
+// Copy Constructor creates deep copy. 
+// used to call by reference when passing to a function. 
+
+
+// 4-: Static Members -: The static keyword is used with a variable to make the memory 
+// of the variable "static" once a static variable is declared its memory can't be changed. 
+
+// 5-: Static functions -: // same for all the objects and it belongs to the class also call by using "className :: static_fun()"
+// :: -> scope re-solution operator 
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// void print(){ // 2-: receive calling , 7-: receive calling 
+//     int b=10; // 3-: b=10 , 8-: b=10 again becoz value of b is changed, bar-2 "b" variable ban rha hai and value initilise ho rhi h 
+//     cout<<b<<endl; // 4-: print 10 , 9-: again print 10 
+//     b++; // 5-: now b=11 but the fun. is finish so, the value is also finised 
+//     // 10-: b=11 but function finised.  
+// } 
+
+// int main(){
+//     print(); // 1-: call the print() fun. 
+//     print(); // 6-: again call print() fun. 
+//     print();
+// }
+
+// // 10
+// // 10
+// // 10
+
+
+
+
+// // use of "static" keyword -: value of static variable is not changed 
+
+// #include<iostream>
+// using namespace std;
+
+// void print(){ // 2-: receive calling , 7-: receive calling 
+//     static int b=10; // 3-: b=10 , 8-: now b=11 becoz value of b is not changed (becoz b is a static variable)
+//     cout<<b<<endl; // 4-: print 10 , 9-: then print 11
+//     b++; // 5-: now b++, b=11 but the fun. is finish so, the value is also finised 
+//     // 10-: b++, b=12
+// } 
+
+// int main(){
+//     print(); // 1-: call the print() fun. 
+//     print(); // 6-: again call print() fun. 
+//     print();
+// }
+
+// // 10
+// // 11
+// // 12
+
+
+
+
+// 7-: Initialisation list -: constructor is used to "initialise the values" 
+// when you make an objects then at that time you give the values to the objects. 
+
+
+
+
+
+// Method-1-: constructor Initialisation -: using "this" keyword and arrow (->) symbol. 
+
+// class Student{
+// public: 
+//     int rollNo;
+//     int age;
+
+//     // constructor -: 
+//     Student(int rollNo, int age){
+//         this->rollNo=rollNo;
+//         this->age=age;
+//     }
+
+// };
+
+
+
+// Method-2-: short-cut -: using colon (:)
+
+// class Student{
+// public: 
+//     int rollNo;
+//     int age;
+
+//     // constructor -: 
+//     Student(int r, int a) : rollNo(r), age(a){
+
+//     }
+
+// };
+
+
+
+// Polymorphism -> Poly means many/multiple and morphism means forms, one name many forms. 
+// Polymorphism -: two types -: 1-: compile time Polymorphism and // 2-: run time Polymorphism
+
+
+// compile time -: before compiling the program 
+// run time -: while running the program 
+
+
+// 1-: compile time Polymorphism -: we study two things 
+// (a)-: function overloading and (b)-: operator overloading 
+
+// 2-: run time Polymorphism -: we study one thing
+// (a)-: function overriding 
+
+
+
+// (a)-: function overloading -: creating functions with some name but different parameters. 
+// same function name but no. of parameters is different.
+
+
+// #include<iostream>
+// using namespace std;
+
+// void sum(int a){
+//     cout<<a+10<<endl;
+// }
+
+// void sum(int a, int b){
+//     cout<<a+b<<endl;
+// }
+
+// void sum(int a, double b){
+//     cout<<a+b<<endl;
+// }
+
+// int main(){
+//     sum(10); // 20
+//     sum(10,20); // 30
+//     sum(10,10.20); // 20.2
+// }
+
+
+
+// (b)-: constructor overloading -: 
+
+#include<iostream>
+using namespace std;
+
+class Bike{
+public:
+
+    int tyreSize;
+    int engineSize;
+
+    // constructor overloading -: we make 3 constr. with same name but parameter is different
+
+    Bike(int ts, int es) : tyreSize(ts), engineSize(es) {
+
+    }
+
+    Bike(int ts) : tyreSize(ts), engineSize(100) {
+
+    }
+
+    Bike() : tyreSize(10), engineSize(20) {
+
+    }
+
+};
+
+int main(){
+
+}
+
+
+

@@ -1,0 +1,810 @@
+// Inheritance -: 
+
+// Single Inheritance
+// Multiple Inheritance
+// Multi-level Inheritance
+// Hierarchical Inheritance
+// Hybrid Inheritance
+
+// properties, Characteristics ko inherit karna 
+// Inheritance used in classes -: ek class ki properties ko dusre class me inherit kara sakte hai 
+// parent class se child class banate hai 
+
+
+
+
+// ex -: Inheritance -: 
+// syntax for inherits -> <child_name> : <access_modifiers> <parent_class>
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class Vehicle{ // Base class or Parent class -> Vehicle 
+// public:
+//     // data members -: 
+//     int tyreSize;
+//     int engineSize;
+//     int lights;
+//     string companyName;
+
+//     // member functions -: 
+//     void show(){
+//         cout<<companyName<<endl;
+//     }
+
+// };
+
+// // we make 2 child class -: Car and Bike 
+
+// // Car inherits Vehicle or Car is a child of Vehicle, Car Vehicle ki properties ko inherit kar rha hai 
+// class Car : public Vehicle{ // Derived class or Child class -> Car
+// public:  
+//     int steeringSize;
+// };
+
+
+// // same as Bike, Bike is child class and it inherits properties and Characteristics of their parent class or Vehicle class 
+// class Bike : public Vehicle{ // child class -> Bike
+// public: 
+//     int handleSize;
+// };
+
+// int main(){
+//     Bike honda;
+
+//     honda.companyName="Hero";
+//     honda.engineSize=100;
+//     honda.handleSize=50;
+//     honda.lights=6;
+//     honda.tyreSize=65;
+
+//     cout<<honda.companyName<<endl; // Hero
+//     cout<<honda.engineSize<<endl; // 100
+//     honda.show(); // Hero
+
+// }
+
+// Hero
+// 100
+// Hero
+
+// Inheritance means we have a parent class after making a child class all the properties,
+// Characteristics, data members and member functions inherits those child class. 
+
+
+
+
+
+// access modifiers -: 
+// public -> low security 
+// protected -> medium security
+// private -> high security
+
+// hm low security se high security ja skte hai but high security se low security nhi ja skte 
+// means hm public se protected and protected se private ja sakte hai 
+
+
+// syntax for inherits -> <child_name> : <access_modifiers> <parent_class>
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class Vehicle{ // Base class or Parent class -> Vehicle 
+// public:
+//     // data members -: 
+//     int tyreSize;
+//     int engineSize;
+//     int lights;
+//     string companyName;
+
+//     // member functions -: 
+//     void show(){
+//         cout<<companyName<<endl;
+//     }
+
+// };
+
+// // we make 2 child class -: Car and Bike 
+
+// // Car inherits Vehicle or Car is a child of Vehicle, Car Vehicle ki properties ko inherit kar rha hai 
+// class Car : public Vehicle{ // Derived class or Child class -> Car
+// public:  
+//     int steeringSize;
+// };
+
+
+// // same as Bike, Bike is child class and it inherits properties and Characteristics of their parent class or Vehicle class 
+// class Bike : public Vehicle{ // child class -> Bike
+// public: 
+//     int handleSize;
+// };
+
+// class A{
+// private: // private can't be accessed, can't be inherited from outside the class
+//     int a_ka_private;
+// protected: // protected can't be accessed from outside the class, can be inherited from outside the class
+//     int a_ka_protected;
+// public: // public can be accessed, can be inherited from outside the class
+//     int a_ka_public;
+// };
+
+
+// // syntax for inherits -> <child_name> : <access_modifiers> <parent_class>
+// // here, "public" means Child class "B" ke liye jo variable aa rhe hai vo "public" rahenge 
+// // child class "B" means "B" parent class "A" ke sare ke sare data members and member functions ko nhi layega 
+// // "A" ka private "B" ke ander kbhi nhi aayega becoz "private" access modifiers can't be accessed, can't be inherited 
+// class B : public A{
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+//         a_ka_protected; // inherit protected but can't be accessed from the main() fun. or outside. 
+//         a_ka_public; 
+//         // a_private; // gives error, "private" can't be accessed, can't be inherited 
+//     }
+// };
+
+// // here, "protected" means Child class "C" ke liye jo variable aa rhe hai vo "protected" rahenge 
+// class C : protected A{
+    
+// };
+
+// // here, "private" means Child class "D" ke liye jo variable aa rhe hai vo "private" rahenge usse "private" kr do 
+// class D : private A{
+    
+// };
+
+// int main(){
+//     B b; // "B"-> class name, "b"-> object name 
+//     b.a_ka_public=10;
+
+//     B c;
+//     // c.a_ka_proteted; // gives error, protected can't be accessed from outside/main() fun, can be inherited 
+// }
+
+
+
+// Types of Inheritance :-
+// Single Inheritance
+// Multiple Inheritance
+// Multi-level Inheritance
+// Hierarchical Inheritance
+// Hybrid Inheritance
+
+// 1-: Single Inheritance -: Base class to Derived class or parent class to child class. 
+// sari properties nhi aayegi kuch properties aayega.
+
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class A{ // class "A" is a parent class or base class -: 
+// private: // private can't be accessed, can't be inherited from outside the class
+//     int a_ka_private;
+// protected: // protected can't be accessed from outside the class, can be inherited from outside the class
+//     int a_ka_protected;
+// public: // public can be accessed, can be inherited from outside the class
+//     int a_ka_public;
+// };
+
+// // class "B" inherits properties and characteristics of their parent class or base case "A". 
+// class B : public A{ // class "B" is a child class
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+//         a_ka_protected; 
+//         a_ka_public; 
+//     }
+
+// };
+
+// int main(){
+//     B b; 
+//     b.a_ka_public=10;
+//     cout<<b.a_ka_public<<endl; // 10
+// }
+
+
+
+
+
+// 2-: Multi-level Inheritance -: Base class to Derived class then Derived class to again Derived class
+// or Parent class to child class and child class to again child class. Level-wise. 
+
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class A{ // class "A" is a parent class or base class -: 
+// private: // private can't be accessed, can't be inherited from outside the class
+//     int a_ka_private;
+// protected: // protected can't be accessed from outside the class, can be inherited from outside the class
+//     int a_ka_protected;
+// public: // public can be accessed, can be inherited from outside the class
+//     int a_ka_public;
+// };
+
+// // class "B" inherits properties and characteristics of their parent class or base case "A". 
+// class B : public A{ // class "B" is a child class
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+//         a_ka_protected; 
+//         a_ka_public; 
+//     }
+
+// };
+
+// // class "C" inherits properties and characteristics of their parent class or base case "B". 
+// class C : public B{ // class "C" is a child class of their parent class "B"
+// public: 
+//     int c_ka_public;
+
+// };
+
+// int main(){
+//     B b; 
+//     b.b_ka_public=10;
+//     cout<<b.b_ka_public<<endl; // 10
+// }
+
+
+
+
+
+
+
+// // constructor working -: 
+
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class A{ // class "A" is a parent class or base class -: 
+// private: // private can't be accessed, can't be inherited from outside the class
+//     int a_ka_private;
+// protected: // protected can't be accessed from outside the class, can be inherited from outside the class
+//     int a_ka_protected;
+// public: // public can be accessed, can be inherited from outside the class
+//     int a_ka_public;
+
+//     // constructor of "A".
+//     A(){
+//         cout<<"A ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// // class "B" inherits properties and characteristics of their parent class or base case "A". 
+// class B : public A{ // class "B" is a child class
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+//         a_ka_protected; 
+//         a_ka_public; 
+//     }
+
+//     // constructor of "B".
+//     B(){
+//         cout<<"B ka constructor call hua"<<endl;
+//     }
+// };
+
+// class C : public B{ // class "C" is a child class of class B
+// public: 
+//     int c_ka_public;
+
+//     // constructor of "C".
+//     C(){
+//         cout<<"C ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// int main(){
+//     // // B b; // object "b" is created then constr. is called -:
+
+//     // R-: 
+//     // A ka constructor call hua
+//     // B ka constructor call hua
+
+//     C c;
+
+//     // // R-: 
+//     // A ka constructor call hua
+//     // B ka constructor call hua
+//     // C ka constructor call hua
+
+// }
+
+// // "B" tb tk exits nhi kar skta jb tk "A" na ho , becoz "B" ko "A" ke members chahiye,
+// // "members" tb banega jb "B" ke koi object honge
+// // agar "B" ko exits karna hai to use "A" ke members chahiye, "A" ke members ke liye "A" ke object hona jaruri hai 
+// // and "A" ka object banane ke liye constr. ko call karna jaruri hai that's why 
+// // pahle "A" ka constr. call ho rha hai, print hua then "B" ka constr.
+
+// // B b; // object 
+// // R-: 
+// // A ka constructor call hua
+// // B ka constructor call hua
+
+
+
+// // Similarly, complier dekha "C" ka object banana hai, but "C", class "B" se inherit hua hai,
+// // "C" doesn't exits without "B", to "C" ka constr. call karne se pahle "B" ka  constr. call karna hoga
+// // but class "B" to class "A" ka bachha hai, "A" se inherit hua hai to pahle "A" ka constr. call karna hoga then "B" ka then "C" ka  
+
+// // C c; // object 
+// // R-: 
+// // A ka constructor call hua
+// // B ka constructor call hua
+// // C ka constructor call hua
+
+
+
+
+
+// // Multiple Inheritance -: Multiple parents, single child. 
+// // single child class or derived class inherits properties of multiple base class or parent class 
+
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// // we have two parent class, class "A" and class "B"
+// class A{ 
+// private: 
+//     int a_ka_private;
+// protected: 
+//     int a_ka_protected;
+// public: 
+//     int a_ka_public;
+// };
+
+// class B { 
+// public: 
+//     // data members of the class -: 
+//     int b_ka_public;
+
+//     // member function of the class -: 
+//     void show(){
+
+//     }
+
+// };
+
+// // class "C" is a child class. 
+// // class "C" inherits properties and characteristics of their parent class or base case "A" and "B"
+// class C : public A, public B{ // class "C" is a child class of their parent class "A" and class "B"
+// public: 
+//     int c_ka_public;
+// };
+
+// int main(){
+//     B b; 
+//     b.b_ka_public=10;
+//     cout<<b.b_ka_public<<endl; // 10
+// }
+
+
+
+
+
+// Hierarchical Inheritance -: single parent, multiple child. 
+// single parent class or base class and mutiple child class or derived class.
+
+
+// Hybrid Inheritance -: Mix of child class and parent class. 
+
+
+// Very famous Ques -: 
+// Q-> Diamond Problem? 
+// When 2 instances of base classes are present in the derived class. 
+// B derives A, C derives A and D derives B+C, Now D has 2 instance of A.
+
+
+// B me A ki property aa rhi hai, C me A ki proerty aa rhi hai 
+// and D me ek bar B ki aur A ki property aa rhi hai and ek bar C ki aur fir se A ki 
+// property aa rhi hai. So, D has 2 instances of A.
+
+//    ********* use of "virtual" keyword -: *********
+// "virtual" banane se class A ka ek hi instance banega. do instances nhi banenge 
+// aur class D me bhi ek hi instance aayega 
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// class A{ 
+// private: 
+//     int a_ka_private;
+// public: 
+//     int a_ka_public;
+
+//     // constructor -: 
+//     A(){
+//         cout<<"A ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// class B : virtual public A{ 
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+
+//     }
+
+//     B(){
+//         cout<<"B ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// class C : virtual public A{
+// public: 
+//     int c_ka_public;
+
+//     C(){
+//         cout<<"C ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// class D: public B, public C{
+// public: 
+//     int d_ka_public;
+
+//     D(){
+//         cout<<"D ka constructor call hua"<<endl;
+//     }
+
+// };
+
+// int main(){
+//     D d; 
+//     d.b_ka_public=10;
+//     d.c_ka_public=30;
+//     d.d_ka_public=40;
+//     d.show();
+// }
+
+// // R-: 
+// // A ka constructor call hua
+// // B ka constructor call hua
+// // C ka constructor call hua
+// // D ka constructor call hua
+
+
+
+// // if we want that A ka public, D me ek bar hi aaye to hm usse "Virtual" bna dete hai 
+// // "virtual" banane se class D me class A do bar nhi aayega 
+// // "virtual" banane se class A ka ek hi instance banega.  
+
+
+
+
+
+// Function Overriding -: 
+// When a function of base class is redefined in it's derived class, it's called function overriding. 
+// Accessing through Scope ReSolution Operator. 
+// Accessig through pointer. 
+
+
+// function overloading, constructor overloading already seen. 
+
+
+
+// Polymorphism -: two types -> compile time, run time 
+// compile time -> achieve -> using function overloading 
+// run time -> achieve -> using function overriding 
+
+
+
+// function overriding -: override karna, takeover karna 
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// class A{ 
+// private: 
+//     int a_ka_private;
+    
+// public: 
+//     int a_ka_public;
+
+//     void show(){
+//         cout<<"Mai A ka show hu."<<endl;
+//     }
+
+// };
+
+// class B : public A{ 
+// public: 
+//     int b_ka_public;
+
+//     // function overriding -: B ke pass already show() name se function tha(class A se publically inherit hua tha) 
+//     // but yh show() ka fun us show() function ko override kar diya . 
+//     void show(){
+//         cout<<"Mai B ka show hu."<<endl;
+//     }
+
+// };
+
+// // int main(){
+// //     B b;
+// //     b.show();
+// // }
+// // // class B ka show() fun call hua. 
+// // // Mai B ka show hu.
+
+
+// // OR -: 
+
+
+// // int main(){
+// //     A a;
+// //     a.show(); 
+// //     B b;
+// //     b.show();
+// // }
+// // // class A ka show() fun call hua then class B ka show() fun call hua alag - alag 
+// // // Mai A ka show hu.
+// // // Mai B ka show hu.
+
+
+// // OR -: Access through Scope ReSolution Operator (::) -:  
+
+
+// // int main(){
+// //     A a;
+// //     a.show();
+// //     B b;
+// //     b.show();
+// //     b.A::show(); // :: -> A::show();
+// // }
+
+// // // Mai A ka show hu.
+// // // Mai B ka show hu.
+// // // Mai A ka show hu.
+
+
+
+// // OR -: Acces through pointer (*) -: 
+// // pointer is nothing but it is a special type of variables,
+// // which is used to store the address of different-2 data types. 
+// // like -: integer ka int*, character ka char*, child class ka child *c, Bike class ka bike *b
+
+// // parent pointer can store child's address 
+// // child ke pass parent ki sari ki sari property aati hai, aur uski khud ki property hoti hai 
+// // to child ke pass bhi parent ki "piece of parent" exits kata hai (parent ki property child ke pass overlap karta hai) 
+// // ***** esliye parent ka pointer child ka address bhi store kar lega *****
+
+
+
+// int main(){
+//     B b;
+//     A *a; // pointer of parent -> *a
+//     a = &b; // child b ka address store kar rha hai a
+
+//     // Now, a kis type ka hai 
+//     // run-time -> "a" address store kar rha hai "b" ka to yh "b" type ka hona chahiye yani "child type" ka 
+//     // compile-time -> but "a" "parent" type ka hai to yh "parent" type ka address store karega. 
+
+//     // to "a" kis type ka address store kar rha hai child type ka ye parent type ka -: 
+
+//     // ************** Most - Most IMP -: **************
+//     //  Solution -: " Virtual functions " -:
+
+// }
+
+
+
+
+
+
+// " Virtual functions " -:
+
+
+// " Virtual functions " -: Virtual functions make sure the correct function is called 
+// for an object, regardless of the pointer used for calling it. 
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// class Vehicle{ 
+// private: 
+//     int a_ka_private;
+    
+// public: 
+//     int a_ka_public;
+
+//     // Virtual functions -: 
+//     virtual void show(){
+//         cout<<"Mai Vehicle ka show hu."<<endl;
+//     }
+
+// };
+
+// class Bike : public Vehicle{ 
+// public: 
+//     int b_ka_public;
+
+//     void show(){
+//         cout<<"Mai Bike ka show hu."<<endl;
+//     }
+
+// };
+
+// int main(){
+//     Bike b;
+//     Vehicle *a; 
+//     a = &b; // Bike "b" ka address "a" me store hua hai 
+//     a->show(); // calling -: 
+// }
+
+// // Mai Bike ka show hu.
+
+
+
+
+// " Virtual functions " -: base class me derived class ka address store hai aur main us pointer se call karunga 
+// to base class ka hi call ho jata hai, this is wrong, hme actually me need hai jiska address store ho usi ko call jaye 
+// uske liye hm "virtual" lagate hai, "Virtual" se run time binding hoti hai. 
+
+
+
+
+
+
+// Abstract class -: related to virtual functoin 
+
+// 1-: what is "pure virtual function" -: Virtual function ke aage zero(0) lga do 
+
+
+
+
+// operator overloading -: compile time polymorphism 
+// syntax -: <return_type> operator <operator> () {}
+// +,-,* -> binary operator -> works on two operands or variables, ex-> a+b
+// ++, -- -> unary operator -> a++, --a -> works on single variable or operands 
+
+// normal addition -: 
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// class ComplexNumber{
+// public:
+//     int imaginary;
+//     int real;
+// };
+
+
+
+// int main(){
+//     ComplexNumber a1,a2;
+
+//     a1.imaginary=10;
+//     a1.real=5;
+
+//     a2.imaginary=2;
+//     a2.real=3;
+
+//     ComplexNumber a3;
+//     a3.real=a1.real+a2.real;
+//     a3.imaginary=a1.imaginary+a2.imaginary;
+
+//     cout<<"Real :"<<a3.real<<" , "<<"Imaginary :"<<a3.imaginary<<endl;
+
+// }
+
+// // Real :8 , Imaginary :12
+
+
+
+// // ex-: Operator Overloading -: +,-
+// // syntax -: <return_type> operator <operator> () {}
+
+
+
+#include<iostream>
+using namespace std;
+
+class ComplexNumber{
+public:
+    int imaginary;
+    int real;
+
+    ComplexNumber operator +(ComplexNumber &c1){
+        ComplexNumber c3;
+        c3.imaginary = c1.imaginary+this->imaginary;
+        c3.real=c1.real+this->real;
+        return c3;
+    }
+
+    ComplexNumber operator -(ComplexNumber &c1){
+        ComplexNumber c3;
+        c3.imaginary = c1.imaginary-this->imaginary;
+        c3.real=c1.real-this->real;
+        return c3;
+    }
+
+};
+
+int main(){
+    ComplexNumber a1,a2;
+
+    a1.imaginary=10;
+    a1.real=5;
+
+    a2.imaginary=2;
+    a2.real=3;
+
+    ComplexNumber a3 = a1 + a2;
+    cout<<"Real :"<<a3.real<<" , "<<"Imaginary :"<<a3.imaginary<<endl;
+
+    ComplexNumber a4 = a1 - a2;
+    cout<<"Real :"<<a4.real<<" , "<<"Imaginary :"<<a4.imaginary<<endl;
+
+    ComplexNumber a5 = a1 + a2 + a3;
+    cout<<"Real :"<<a5.real<<" , "<<"Imaginary :"<<a5.imaginary<<endl;
+
+}
+
+// Real :8 , Imaginary :12
+// Real :-2 , Imaginary :-8
+// Real :16 , Imaginary :24
+
+
+
+
+// IMP -: 
+// Some operators which "can't be overloaded"  -: 
+
+// . (Dot operator) -: used for accessing 
+// ?: (conditional operator) or ternary operator -> we can't overloaded 
+// :: (scope resolution operator)
+// sizeof opertor -: these are some operator which can't be overloaded 
+
+
+
+// Friend Function -: 
+
+// Friend keyword -: "private" ko bhi access kar sakta hai class me se 
+// "private" access modifier ko koi nhi access kar skta tha usse "friend" keyword access kar skta hai 
+
+
+
+// const keyword -: constant -> it's value can't be changed. 
+// ex-: const int a = 5; // value of variable "a" can't be changed 
+
+// const function -: doesn't changed. 
+
+
+
+
+
+
+// OOPS DONE BY HARSH SIR ON PAID BATCH FROM PW ON 16-08-2024, 02:00 PM

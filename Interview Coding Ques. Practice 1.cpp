@@ -112,4 +112,88 @@ int main() {
 
 
 
+// 4. Encapsulation -: 
+// Definition: Encapsulation is the process of bundling data (variables) and methods that operate on the data into a 
+// single unit (class), while restricting direct access to some of the object’s components.
 
+// Key Features:
+// Access modifiers (private, public, protected) control access to class members.
+// Provides getter and setter methods for controlled access.
+// Enhances security and data integrity.
+
+
+    
+4. Create and Use a Class with Encapsulation -: 
+
+
+#include <iostream>
+using namespace std;
+class Employee {
+private:
+    string name;
+    int id;
+
+public:
+    void setName(string empName) {
+        name = empName;
+    }
+    void setId(int empId) {
+        id = empId;
+    }
+    void display() {
+        cout << "Employee Name: " << name << ", ID: " << id << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+    emp.setName("John Doe");
+    emp.setId(101);
+    emp.display();
+}
+
+
+
+// 5. Operator Overloading -: 
+// Definition: Operator overloading allows defining or modifying the behaviorof operators (e.g., +, -, *) for user-defined data types.
+
+// Key Features:
+// Adds custom behavior for operators to work with objects.
+// Syntax remains intuitive (e.g., obj1 + obj2).
+// Does not change the original meaning of the operator.
+
+
+
+5. Operator Overloading Example -: 
+
+#include <iostream>
+using namespace std;
+class Complex {
+private:
+    int real, imag;
+public:
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+
+    Complex operator+(const Complex& obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 2), c2(1, 7);
+    Complex c3 = c1 + c2; // Using overloaded operator
+    c3.display();
+}
+
+
+// Summary of OOP Principles -: These concepts demonstrate core OOP principles:
+
+// Abstraction: Hiding implementation details (e.g., encapsulation and inheritance).
+// Encapsulation: Restricting access to data.
+// Inheritance: Code reuse and hierarchical relationships.
+// Polymorphism: Flexibility and dynamic behavior.
+
+Date - 29-12-2024, Time - 12:30 PM

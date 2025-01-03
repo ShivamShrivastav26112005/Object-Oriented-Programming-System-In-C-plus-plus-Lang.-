@@ -264,3 +264,40 @@ int main() {
 
 
 
+
+3. What is the difference between deep copy and shallow copy in C++?
+Shallow Copy: Copies only the memory address; both objects share the same memory.
+Deep Copy: Allocates new memory and copies actual data.
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+class String {
+private:
+    char* str;
+public:
+    String(const char* s) {
+        str = new char[strlen(s) + 1];
+        strcpy(str, s);
+    }
+    // Deep Copy Constructor
+    String(const String& other) {
+        str = new char[strlen(other.str) + 1];
+        strcpy(str, other.str);
+    }
+    void display() { 
+        cout << str << endl; 
+    }
+    ~String() { 
+        delete[] str; 
+    }
+};
+int main() {
+    String s1("Hello");
+    String s2 = s1; // Deep Copy
+    s2.display(); // Outputs: Hello
+}
+
+
+

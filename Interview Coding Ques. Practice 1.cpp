@@ -189,11 +189,78 @@ int main() {
 }
 
 
+// Date - 29-12-2024, Time - 12:30 PM
+
+
+
+
+    
+
+// Important OOPs Related Questions And Their Code. 
+    
 // Summary of OOP Principles -: These concepts demonstrate core OOP principles:
 
-// Abstraction: Hiding implementation details (e.g., encapsulation and inheritance).
-// Encapsulation: Restricting access to data.
-// Inheritance: Code reuse and hierarchical relationships.
-// Polymorphism: Flexibility and dynamic behavior.
+1. Explain the four pillars of OOP and provide examples in C++.
 
-Date - 29-12-2024, Time - 12:30 PM
+// Abstraction: Hiding implementation details, Hiding complexities and showing only essential features.
+// Encapsulation: Bundling data and methods together, hiding implementation details.
+// Inheritance: Code reuse and hierarchical relationships, Deriving new classes from existing ones.
+// Polymorphism: One interface, multiple implementations (e.g., function overloading and overridiExample (Inheritance and Polymorphism):
+
+
+Example (Inheritance and Polymorphism) -: 
+
+#include <iostream>
+using namespace std;
+class Base {
+public:
+    virtual void display() { 
+        cout << "Base class\n"; 
+    } // Polymorphism
+};
+class Derived : public Base {
+public:
+    void display() override { 
+        cout << "Derived class\n";
+    }
+};
+int main() {
+    Base* obj = new Derived(); // Polymorphism
+    obj->display(); // Outputs: Derived class
+    delete obj;
+}
+
+
+
+2. What is the difference between virtual and pure virtual functions in C++?
+Virtual Function: Allows runtime polymorphism; provides a base implementation.
+Pure Virtual Function: Forces derived classes to provide their own implementation. Declared as = 0.
+
+
+
+#include <iostream>
+using namespace std;
+class Base {
+public:
+    virtual void show() { 
+        cout << "Base class\n"; 
+    } // Virtual Function
+    virtual void pureShow() = 0; // Pure Virtual Function
+};
+class Derived : public Base {
+public:
+    void show() override { 
+        cout << "Derived class\n"; 
+    }
+    void pureShow() override { 
+        cout << "Pure Virtual Function in Derived\n"; 
+    }
+};
+int main() {
+    Derived obj;
+    obj.show();
+    obj.pureShow();
+}
+
+
+
